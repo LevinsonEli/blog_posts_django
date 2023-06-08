@@ -1,0 +1,23 @@
+
+<style>
+    body {
+        background-color: beige;
+        margin: 2rem;
+        padding: 0;
+    }
+    span {
+        font-size: 0.8rem;
+        padding-top: 0;
+        margin-left: 20px;
+    }
+    h2 {
+        padding-bottom: 0;
+        margin-bottom: 2px;
+    }
+</style>
+
+<h1>Post {{ post.id }}</h1>
+
+<h2>{{ post.title }}</h2>
+<span>{{ post.created_at }}</span>
+<p>{{ post.body }}</p>

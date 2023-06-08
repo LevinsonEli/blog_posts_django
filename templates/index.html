@@ -1,0 +1,32 @@
+
+<style>
+    .link {
+        border: 3px solid #aaa;
+        border-radius: 10px;
+        background-color: beige;
+        padding: 1rem 2rem;
+        margin-bottom: 1rem;
+    }
+    .link a {
+        text-decoration: none; 
+        color: #333;
+    }
+    .link a:hover {
+        color: black;
+    }
+    .link:hover h2 {
+        text-decoration: underline;
+    }
+</style>
+
+<h1>Blog Posts</h1>
+
+{% for post in posts %}
+<div class="link">
+    <a href="/posts/{{post.id}}">
+    <h2>{{post.title}}</h2>
+    <h5>{{post.created_at}}</h5>
+    <p>{{post.body|truncatewords:20}}</p>
+    </a>
+</div>
+{% endfor %}
