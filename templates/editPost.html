@@ -1,0 +1,36 @@
+
+<style>
+    body {
+        background-color: beige;
+        margin: 2rem;
+        padding: 0;
+    }
+    span {
+        font-size: 0.8rem;
+        padding-top: 0;
+        margin-left: 20px;
+    }
+    h2 {
+        padding-bottom: 0;
+        margin-bottom: 2px;
+    }
+    form {
+        margin-top: 2rem;
+    }
+</style>
+
+<h1>Post {{ post.id }}</h1>
+<span>{{ post.created_at }}</span>
+
+<form action="{% url 'editPost' post.id %}" method="POST">
+    {% csrf_token %}
+    <div>
+        <label for="title">Title: </label>
+        <input id="title" name="title" type="text" value="{{ post.title }}" />
+    </div>
+    <div>
+        <label for="body">Body:</label>
+        <textarea id="body" name="body" rows="20" cols="70">{{ post.body }}</textarea>
+    </div>
+    <button type="submit">Save</button>
+</form>
